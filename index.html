@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <span>Github Finder</span>
+    </header>
+    <main>
+        <div class="search-div">
+            <p>Search Github Users</p>
+            <p>Enter username to fetch a user profile and repos</p>
+            <div class="input-div">
+                <input type="text" class="search-input" id="search-input">
+            <button class="search-button" id="search-btn">Search</button>
+            </div>
+            
+        </div>
+        <div class="profile-div" id="profile-div">
+            <div class="user-div">
+                <div class="user-avatar-div">
+                    <img class="user-avatar-picture" id="user-avatar-picture">
+                </div>
+                <div class="user-info-div">
+                    <div class="user-RGFs-div">
+                        <span id="public_repos_span" class="blue-span">Public Repos: </span>
+                        <span id="public_gists_span" class="gray-span">Public Gists: </span>
+                        <span id="followers_span" class="green-span">Followers: </span>
+                        <span id="following_span" class="darkgreen-span">Following: </span>
+                    </div>
+                    <div class="user-info-table">
+                        <p id="company_p">Company : </p>
+                        <p id="website_p">Website : </p>
+                        <p id="location_p">Location : </p>
+                        <p id="member_p">Member : </p>
+                    </div>
+                </div>
+            </div>
+            <button id="user-profile-btn" class="user-profile-btn">View Profile</button>
+            
+        </div>
+        <p style="font-size: 30px;">Latest Repos</p>
+        <div id="latest-repos" class="latest-repos"></div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
