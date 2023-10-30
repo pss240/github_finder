@@ -15,6 +15,7 @@ let User = {
 }
 searchBtn.addEventListener('click', async () =>{
     const name = document.getElementById('search-input').value;
+    User.repos = [];
     try {
         const user = await fetch(`https://api.github.com/users/${name}`)
         .then(res => res.json())
@@ -43,10 +44,14 @@ searchBtn.addEventListener('click', async () =>{
         document.getElementById('user-profile-btn').addEventListener('click', () =>{
             window.open(User.html_url, '_blank');
         })
-        const repo_div = document.getElementById('latest-repos');
+        const repos_container = document.getElementById('repos-container');
+        repos_container.removeChild(repos_container.firstChild);
+        const repo_div = document.createElement('div');
+        repo_div.classList.add('latest-repos');
         for(let i = 0; i < User.repos.length; i++){
             repo_div.append(create_repo_element(User.repos[i]));
         }
+        repos_container.append(repo_div);
     }
 })
 
